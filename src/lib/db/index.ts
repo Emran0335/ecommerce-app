@@ -4,7 +4,7 @@ import * as schema from "./schema/index";
 
 import * as dotenv from "dotenv";
 
-dotenv.config({ path: ".env" });
+dotenv.config({ path: ['.env.local', '.env'] });
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,

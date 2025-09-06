@@ -19,7 +19,7 @@ export const products = pgTable("products", {
     onDelete: "set null",
   }),
   isPublished: boolean("is_published").notNull().default(false),
-  defaultVarientId: uuid("default_variant_id"),
+  defaultVariantId: uuid("default_variant_id"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });

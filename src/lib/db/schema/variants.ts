@@ -62,7 +62,7 @@ export const insertVariantSchema = z.object({
   productId: z.uuid(),
   sku: z.string().min(1),
   price: z.string(),
-  salePrice: z.string(),
+  salePrice: z.string().optional().nullable(),
   colorId: z.uuid(),
   sizeId: z.uuid(),
   inStock: z.number().int().nonnegative().optional(),
