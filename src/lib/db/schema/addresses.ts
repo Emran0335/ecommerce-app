@@ -28,7 +28,7 @@ export const addressesRelations = relations(addresses, ({ one }) => ({
 }));
 
 export const insertAddressSchema = z.object({
-  userId: z.string().uuid(),
+  userId: z.uuid(),
   type: z.enum(["billing", "shipping"]),
   line1: z.string().min(1),
   line2: z.string().optional().nullable(),
@@ -40,7 +40,7 @@ export const insertAddressSchema = z.object({
 });
 
 export const selectAddressSchema = insertAddressSchema.extend({
-  id: z.string().uuid(),
+  id: z.uuid(),
 });
 
 export type InsertAddress = z.infer<typeof insertAddressSchema>;

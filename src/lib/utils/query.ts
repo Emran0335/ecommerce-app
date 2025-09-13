@@ -31,7 +31,6 @@ export function withUpdatedParams(
 ): string {
   const current = parseQuery(currentSearch);
   const next: QueryObject = { ...current };
-
   Object.entries(updates).forEach(([key, value]) => {
     if (
       value === undefined ||
